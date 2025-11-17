@@ -1,28 +1,281 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-  text-align: center;
+/* ------------------------- */
+/* CONFIGURAÇÕES INICIAIS   */
+/* ------------------------- */
+:root{
+  font-size: 10px;
+  --main-color: #fece00;
+  --black-color: #131313;
+  --white-color: #ffffff;
+  --back-ground: #121418 ;   
+  --border: 0.1rem solid rgba(255, 255, 255, 0.3); 
+}
+
+/* reset simples */
+*{
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+}
+
+/* ------------------------- */
+/* VÍDEO DE FUNDO            */
+/* ------------------------- */
+.caixa-video {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.caixa-video video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.mascara {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  background: linear-gradient(
+    109deg,
+    rgba(10,12,16,0.99) 15%, 
+    rgba(10,12,16,0.7) 51.8%, 
+    rgba(10,12,16,0.99) 91.5%
+  );
+}
+
+/* ------------------------- */
+/* CABEÇALHO                 */
+/* ------------------------- */
+.site-header {
+  max-height: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 3;
+  background-color: var(--back-ground);
+  border-bottom: var(--border);
   padding: 0;
 }
 
-header, footer {
-  background-color: #004aad;
-  color: white;
-  padding: 1rem;
+.topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
 }
 
-button {
-  background-color: #004aad;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  margin-top: 20px;
-  border-radius: 8px;
+.topo img {
+  height: 8rem;
+}
+
+/* MENU */
+.menu a {
+  margin: 0 2rem;
+  font-size: 1.8rem;
+  color: var(--white-color);
+  font-weight: 600;
+  transition: 0.1s linear;
+}
+
+.menu a:hover {
+  color: var(--main-color);
+  border-bottom: 0.1rem solid var(--main-color);
+  padding-bottom: 0.5rem;
+}
+
+/* ------------------------- */
+/* CONFIGURAÇÕES GERAIS      */
+/* ------------------------- */
+section {
+  padding: 3rem 0;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.conteudo {
+  position: relative;
+  z-index: 2;
+  padding: 6rem 0 4rem;
+  color: var(--white-color);
+}
+
+.container {
+  max-width: 1200px;
+}
+
+/* ------------------------- */
+/* HERO                      */
+/* ------------------------- */
+.conteudo .hero .container p span {
+  margin-bottom: 1rem;
+  color: var(--main-color);
+}
+
+.hero .container {
+  width: 60%;
+  padding: 10rem 0 0 6rem;
+  text-align: left;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.hero .container h3 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  color:var(--white-color);
+}
+
+.hero .container p {
+  color: var(--white-color);
+  max-width: 700px;
+  font-size: 2rem;
+  font-weight: 300;
+  padding: 1rem 0;
+  line-height: 1.8;
+}
+
+/* Botão Hero */
+.botao-link {
+  background-color: var(--main-color);
   cursor: pointer;
+  margin-top: 1rem;
+  font-size: 1.7rem;
+  color: var(--black-color);
+  padding: 1rem 3rem;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: bold;
+  transition: 0.3s ease;
 }
 
-button:hover {
-  background-color: #007bff;
+.hero .container a:hover {
+  transform: scale(1.07);
+  box-shadow: 0 0 20px var(--main-color);
+  filter: brightness(1.2);
 }
+
+/* ------------------------- */
+/* SOBRE NÓS                 */
+/* ------------------------- */
+
+/* Título principal da seção */
+.titulo {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  color: var(--white-color);
+}
+
+.titulo span {
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: var(--main-color);
+}
+
+/* GRID SOBRE */
+.sobre .sobre-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  background-color: var(--back-ground);
+  padding: 2rem;
+  align-items: center;
+  margin-top: 0rem;
+}
+
+
+
+.sobre-texto h3 {
+  color: var(--white-color);
+  text-align: left;
+  font-size: 3rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.sobre-texto p {
+  color: var(--white-color);
+  font-size: 1.5rem;
+  line-height: 1.8;
+  padding: 1rem 0;
+}
+
+/* IMAGEM SOBRE */
+.sobre-img img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+}
+
+/* BOTÃO SOBRE */
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  background: var(--main-color);
+  font-size: 1.7rem;
+  color: var(--black-color);
+  border-radius: 6px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 18px var(--main-color);
+  filter: brightness(1.15);
+}
+
+/* ------------------------- */
+/* Endereço                   */
+/* ------------------------- */
+.mascara-modal {
+  visibility: hidden;
+  transition: visibility 0.05s linear;
+  z-index: 3;
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+    background: linear-gradient(
+    109deg,
+    rgba(10,12,16,0.99) 15%, 
+    rgba(10,12,16,0.7) 51.8%, 
+    rgba(10,12,16,0.99) 91.5%);
+
+}
+
+.modal {
+  margin-top: 4rem;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  z-index: 4;
+  gap: 20px;
+  color: var(--white-color);
+  position: fixed;
+  top: 50%;
+  left: -50%;
+  transform: translate(-50%, -50%);
+  transition: left 0.2s ease-in-out;
+}
+

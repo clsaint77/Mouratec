@@ -19,6 +19,10 @@
   font-family: "Roboto", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* ------------------------- */
 /* VÍDEO DE FUNDO            */
 /* ------------------------- */
@@ -60,6 +64,26 @@
 /* ------------------------- */
 /* CABEÇALHO                 */
 /* ------------------------- */
+
+nav ul {
+    list-style: none;
+    display: flex;          /* coloca os itens lado a lado */
+    gap: 2rem;              /* espaçamento entre eles */
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;  /* garante alinhamento horizontal */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.6rem;
+}
+
 .site-header {
   position: fixed;
   top: 0;
@@ -73,16 +97,27 @@
 .topo {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 1rem 3rem;
+  justify-content: center;
+  padding: 0rem 3rem;
 }
 
 .topo img {
-  height: 8rem;
+  height: 4rem;
+  align-items: left ;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 /* MENU */
+.menu{
+  display: flex;
+  gap: 2rem;
+}
+
 .menu a {
+  display: flex;
+  gap: 2rem;
+  list-style: NONE;
   margin: 0 2rem;
   font-size: 1.8rem;
   color: var(--white-color);
@@ -96,76 +131,64 @@
   padding-bottom: 0.5rem;
 }
 
-/* ------------------------- */
-/* CONFIGURAÇÕES GERAIS      */
-/* ------------------------- */
-section {
-  padding: 3rem 0;
-  margin: 0 auto;
-  max-width: 1200px;
-}
 
 .conteudo {
   position: relative;
   z-index: 2;
-  padding: 10rem 0 4rem;
+  padding: 20rem 0 0rem;
   color: var(--white-color);
 }
 
-.container {
-  max-width: 1200px;
-}
+/* ------------------------- */
+/* first-text                      */
+/* ------------------------- */
 
-/* ------------------------- */
-/* HERO                      */
-/* ------------------------- */
+
+.hero .container {
+  padding: rem 0 0 0rem;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 .conteudo .hero .container p span {
   margin-bottom: 1rem;
   color: var(--main-color);
 }
 
-.hero .container {
-  width: min(90%, 1200px);
-  padding: 10rem 0 0 6rem;
-  text-align: left;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
 .hero .container h3 {
-  font-size: 4rem;
-  margin-bottom: 1rem;
+  font-size: 6rem;
+  margin-bottom: 2rem;
   text-transform: uppercase;
   color:var(--white-color);
 }
 
 .hero .container p {
   color: var(--white-color);
-  max-width: 700px;
+  max-width: 900px;
   font-size: 2rem;
   font-weight: 300;
   padding: 1rem 0;
   line-height: 1.8;
 }
 
-/* Botão Hero */
+/* Botão realize seu projeto */
 .botao-link {
   background-color: var(--main-color);
   cursor: pointer;
   margin-top: 1rem;
-  font-size: 1.7rem;
+  font-size: 2rem;
   color: var(--black-color);
   padding: 1rem 3rem;
   border-radius: 6px;
   display: inline-block;
   font-weight: bold;
-  transition: 0.3s ease;
+  transition: 0.3s ease; 
 }
 
 .hero .container a:hover {
-  transform: scale(1.07);
+  transform: scale(1.2);
   box-shadow: 0 0 20px var(--main-color);
   filter: brightness(1.2);
 }
@@ -173,8 +196,16 @@ section {
 /* ------------------------- */
 /* SOBRE NÓS                 */
 /* ------------------------- */
-
+.sobre
+{
+  position: relative;
+  z-index: 2;
+  padding: 0rem 0 0rem;
+}
 .titulo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   font-size: 4rem;
   margin-bottom: 1rem;
@@ -184,6 +215,7 @@ section {
 
 .titulo span {
   font-size: 4rem;
+  padding: 0 1rem;
   text-transform: uppercase;
   color: var(--main-color);
 }
@@ -192,34 +224,31 @@ section {
 .sobre .sobre-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 0rem;
   background-color: var(--back-ground);
   padding: 2rem;
   align-items: center;
 }
 
-.sobre-texto h3 {
-  color: var(--white-color);
-  text-align: left;
-  font-size: 3rem;
-  line-height: 1.8;
-  margin-bottom: 1rem;
-}
-
 .sobre-texto p {
   color: var(--white-color);
-  font-size: 1.5rem;
+  font-size: 2rem;
   line-height: 1.8;
   padding: 1rem 0;
 }
+.sobre-texto p span {
+  margin-bottom: 1rem;
+  color: var(--main-color);
+text-transform: uppercase;
+}
 
 .sobre-img img {
-  width: 100%;
+  width: 90%;
   height: auto;
   border-radius: 6px;
 }
 
-/* BOTÃO SOBRE */
+/* BOTÃO Saiba mais */
 .btn {
   display: inline-block;
   margin-top: 1rem;
@@ -233,60 +262,240 @@ section {
 }
 
 .btn:hover {
-  transform: scale(1.08);
+  transform: scale(1.2);
   box-shadow: 0 0 18px var(--main-color);
   filter: brightness(1.15);
 }
 
-/* ------------------------- */
-/* MODAL ENDEREÇO            */
-/* ------------------------- */
-.mascara-modal {
-  visibility: hidden;
-  transition: visibility 0.05s linear;
-  z-index: 3;
+
+/* === MENU MOBILE === */
+
+/* Fundo com blur ao abrir o menu */
+body.menu-aberto::before {
+  content: "";
   position: fixed;
   inset: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(10, 12, 16, 0.8);
+  backdrop-filter: blur(6px);
+  background: rgba(0,0,0,0.4);
+  z-index: 2;
 }
 
-.modal {
-  margin-top: 4rem;
-  max-height: 500px;
-  display: flex;
-  flex-direction: column;
-  background-color: transparent;
-  z-index: 4;
-  gap: 20px;
-  color: var(--white-color);
-  position: fixed;
-  top: 50%;
-  left: -50%;
-  transform: translate(-50%, -50%);
-  transition: left 0.2s ease-in-out;
+/* Botão hamburguer */
+.toggle_btn {
+  display: none;
+  font-size: 3.2rem;
+  color: white;
+  z-index: 5;
+  cursor: pointer;
+  position: absolute;
+  left: 2rem;
+  top: 2.5rem;
 }
+
+/* Efeito de hambúrguer */
+.toggle_btn.active i {
+  transition: 0.3s ease;
+  transform: rotate(90deg);
+}
+
+ /*DROPDOWN MENU*/
+.dropdown_menu {
+  position: fixed;
+  top: 8rem;
+  left: 0;
+  width: 100%;
+  background: rgba(18, 20, 24, 0.95);
+  padding: 2rem 0;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  z-index: 4;
+
+  display: flex;
+  justify-content: center;
+
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+  transition: all 0.35s ease;
+}
+.dropdown_menu ul {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+}
+
+.dropdown_menu li {
+  text-align: center;
+  padding: 1.6rem 0;
+}
+
+/* Estado quando aberto */
+.dropdown_menu.open {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown_menu a {
+  color: white;
+  font-size: 2rem;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.dropdown_menu a:hover {
+  color: var(--main-color);
+}
+
+/* ------------------------- */
+/* RODAPE                 */
+/* ------------------------- */
+
+/* Rodape oculto inicialmente */
+#footerFinal {
+    width: 100%;
+    background: #0c0c0c; /* mesmo fundo do seu header */
+    padding: 40px 0;
+    color: white;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all 0.5s ease;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 9999;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Container principal */
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Contatos lado a lado */
+.footer-contatos {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Cada item de contato */
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-icon {
+    width: 22px;
+    height: 22px;
+}
+
+.footer-item a {
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
+}
+
+.footer-item a:hover {
+    text-decoration: underline;
+}
+
+/* Frase */
+.footer-frase {
+    font-size: 2rem;
+    font-style: italic;
+    color: #e3e3e3;
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+/* aumenta espaço no final da página */
+body {
+    padding-bottom: 200px; 
+}
+
+.whatsapp-float {
+    position: fixed;
+    width: 65px;
+    height: 65px;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25D366;
+    color: #FFF;
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 9999;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float img {
+    width: 38px;
+    height: 38px;
+}
+
+/* Efeito de brilho no hover */
+.whatsapp-float:hover {
+    transform: scale(1.12);
+    box-shadow: 0 0 18px #25D366;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ------------------------- */
 /* RESPONSIVIDADE - MOBILE   */
 /* ------------------------- */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
 
   /* HEADER */
+  /*navbar*/
+
+   .menu {
+    display: none;
+  }
+
   .topo {
-    padding: 1rem 1.5rem;
+    justify-content: center;
+    position: relative;
   }
 
-  .topo img {
-    height: 5.5rem;
+.toggle_btn {
+    display: block;
   }
 
-  .menu {
-    display: none; /* depois podemos criar o menu hamburguer */
-  }
+  
 
-  /* HERO */
+  /* first-text */
   .hero .container {
     width: 100%;
     padding: 12rem 2rem 2rem;
@@ -321,13 +530,12 @@ section {
     font-size: 1.4rem;
   }
 
-  /* MODAL */
-  .modal {
-    width: 90%;
-  }
+    .footer-contatos {
+        flex-direction: column;
+        gap: 15px;
+    }
 
-  .modal iframe {
-    width: 100% !important;
-    height: 300px !important;
-  }
+    .footer-frase {
+        font-size: 1.4rem;
+    }
 }
